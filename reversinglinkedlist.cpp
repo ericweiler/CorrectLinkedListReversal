@@ -1,21 +1,20 @@
 #include <iostream>
-
 using namespace std;
 
-struct node{
+struct node{ //linked list links/nodes
 	int data;
 	node* next;
 };
 
-void print(node* head){
+void print(node* head){		//prints linked list to console given head pointer
 	for (node* temp = head; temp != NULL; temp = temp->next)
 		cout << temp->data << " ";
 	cout << endl;
 }
 
 
-node* reverseList(node* head){
-	node* next1 = head->next;
+node* reverseList(node* head){	//reverse a linked list by traversing the list once while reversing the individual links.
+	node* next1 = head->next;	//Reversal is acheived by saving the location of the adjacent nodes so that the next and previous nodes are known and can be used for assignment
 	node* next2;
 	head->next = NULL;
 	while (next1 != NULL){
